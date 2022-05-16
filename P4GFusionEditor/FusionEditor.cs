@@ -159,7 +159,7 @@ namespace P4GFusionEditor
         {
             fileToolStripMenuItem.HideDropDown();
             OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Filter = "fclTable.bin or fclTable.bin (*.bin)|*.bin";
+            dialog.Filter = "fclTable.bin (*.bin)|*.bin";
             dialog.Title = "Load your fclTable.bin...";
             if (dialog.ShowDialog() == DialogResult.OK)
             {
@@ -169,7 +169,7 @@ namespace P4GFusionEditor
                     int index = InputBin.FindBinIndex("fclTable.bin");
                     if (index == -1)
                     {
-                        MessageBox.Show("fclTable.bin not found");
+                        MessageBox.Show("not a proper fclTable.bin");
                         return;
                     }
                     else
@@ -334,6 +334,40 @@ namespace P4GFusionEditor
         {
             fileToolStripMenuItem.HideDropDown();
 
+            if (fclTable == null)
+            {
+                MessageBox.Show("fclTable.bin not loaded, please load it");
+                
+
+                OpenFileDialog dialog2 = new OpenFileDialog();
+                dialog2.Filter = "fclTable.bin or fclTable.bin (*.bin)|*.bin";
+                dialog2.Title = "Load your fclTable.bin...";
+                if (dialog2.ShowDialog() == DialogResult.OK)
+                {
+                    Bin InputBin = new Bin(dialog2.FileName);
+                    if (InputBin.Files[0].Name != "fclWeaponTypeName.ftd")
+                    {
+                        int index = InputBin.FindBinIndex("fclTable.bin");
+                        if (index == -1)
+                        {
+                            MessageBox.Show("fclTable.bin not found");
+                            return;
+                        }
+                        else
+                        {
+                            Bin TempBin = new Bin(InputBin.Files[index].Data);
+                            InputBin = TempBin;
+                        }
+                    }
+
+                    fclTable = InputBin;
+
+                }
+                else
+                    return;
+            }
+
+
             SaveFileDialog dialog = new SaveFileDialog();
             dialog.Title = "Save your fclTable.bin...";
             dialog.FileName = "fclTable.bin";
@@ -384,10 +418,12 @@ namespace P4GFusionEditor
 
                 switch (index)
                 {
-                    case 3: Name = "Triangle"; break;
-                    case 4: Name = "Cross"; break;
-                    case 5: Name = "Pentagon"; break;
-                    case -1: Name = "Dodecagon"; break;
+                    case 3: Name = "Triangle"; tabControl1.SelectedIndex = 1; break;
+                    case 4: Name = "Cross"; tabControl1.SelectedIndex = 2;  break;
+                    case 5: Name = "Pentagon"; tabControl1.SelectedIndex = 3; break;
+                    case 6: Name = "Hexagon"; tabControl1.SelectedIndex = 4; break;
+                    case -1: Name = "Dodecagon"; tabControl1.SelectedIndex = 5; break;
+                    default: tabControl1.SelectedIndex = 0; break;
                 }
 
                 LoadFusion(Name, InputFcl);
@@ -418,11 +454,6 @@ namespace P4GFusionEditor
 
 
             
-        }
-
-        private void openABinToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

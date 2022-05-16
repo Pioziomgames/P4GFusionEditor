@@ -33,10 +33,12 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openABinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openSingleFtdToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aemulusFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fclTablebinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.currentsTabFtdToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPageNormal = new System.Windows.Forms.TabPage();
             this.dataGridViewNormal = new System.Windows.Forms.DataGridView();
@@ -100,8 +102,6 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.currentsTabFtdToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openABinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPageNormal.SuspendLayout();
@@ -148,11 +148,18 @@
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
+            // openABinToolStripMenuItem
+            // 
+            this.openABinToolStripMenuItem.Name = "openABinToolStripMenuItem";
+            this.openABinToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openABinToolStripMenuItem.Text = "Open FclTable.bin";
+            this.openABinToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+            // 
             // openSingleFtdToolStripMenuItem
             // 
             this.openSingleFtdToolStripMenuItem.Name = "openSingleFtdToolStripMenuItem";
             this.openSingleFtdToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.openSingleFtdToolStripMenuItem.Text = "A Open Single Ftd";
+            this.openSingleFtdToolStripMenuItem.Text = "Open A Single Ftd";
             this.openSingleFtdToolStripMenuItem.Click += new System.EventHandler(this.openSingleFtdToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
@@ -179,6 +186,13 @@
             this.fclTablebinToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.fclTablebinToolStripMenuItem.Text = "fclTable.bin";
             this.fclTablebinToolStripMenuItem.Click += new System.EventHandler(this.fclTablebinToolStripMenuItem_Click);
+            // 
+            // currentsTabFtdToolStripMenuItem
+            // 
+            this.currentsTabFtdToolStripMenuItem.Name = "currentsTabFtdToolStripMenuItem";
+            this.currentsTabFtdToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.currentsTabFtdToolStripMenuItem.Text = "Current tab\'s ftd";
+            this.currentsTabFtdToolStripMenuItem.Click += new System.EventHandler(this.currentsTabFtdToolStripMenuItem_Click);
             // 
             // tabControl1
             // 
@@ -760,20 +774,6 @@
             this.removeToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
             this.removeToolStripMenuItem.Text = "Remove";
             this.removeToolStripMenuItem.Click += new System.EventHandler(this.removeToolStripMenuItem_Click);
-            // 
-            // currentsTabFtdToolStripMenuItem
-            // 
-            this.currentsTabFtdToolStripMenuItem.Name = "currentsTabFtdToolStripMenuItem";
-            this.currentsTabFtdToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.currentsTabFtdToolStripMenuItem.Text = "Current tab\'s ftd";
-            this.currentsTabFtdToolStripMenuItem.Click += new System.EventHandler(this.currentsTabFtdToolStripMenuItem_Click);
-            // 
-            // openABinToolStripMenuItem
-            // 
-            this.openABinToolStripMenuItem.Name = "openABinToolStripMenuItem";
-            this.openABinToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.openABinToolStripMenuItem.Text = "Open FclTable.bin";
-            this.openABinToolStripMenuItem.Click += new System.EventHandler(this.openABinToolStripMenuItem_Click);
             // 
             // FusionEditor
             // 
